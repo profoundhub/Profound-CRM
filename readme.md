@@ -1,3 +1,3 @@
-Using FireBase: https://firebase.google.com/
+Use FireBase: https://firebase.google.com/
 
-Started around 4pm. on Oct.18.2016
+Started around 4pm. today Oct.18.2016
