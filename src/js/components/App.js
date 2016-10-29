@@ -11,28 +11,28 @@ function getAppState(){
 }
 
 var App = React.createClass({
-	getInitialState: function(){
+	getInitialState: function() {
 		return getAppState();
 	},
 
-	componentDidMount: function(){
+	componentDidMount: function() {
 		AppStore.addChangeListener(this._onChange);
 	},
 
-	componentUnmount: function(){
+	componentUnmount: function() {
 		AppStore.removeChangeListener(this._onChange);
 	},
 
-	render: function(){
+	render: function() {
 		return(
-			<div>
-				MY APP
+			<div>				 
+				<AddForm />
 			</div>
 		);
 	},
 
 	// Update view state when change is received
-	_onChange: function(){
+	_onChange: function() {
 		this.setState(getAppState());
 	}
 });
