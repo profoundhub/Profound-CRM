@@ -1,5 +1,6 @@
 /node_modules
 node_modules
+dist
 
 # Windows image file caches
   Thumbs.db
@@ -27,6 +28,7 @@ $RECYCLE.BIN/
 
 # OSX
 # =========================
+yarn-error.log
 
 .DS_Store
 .AppleDouble
