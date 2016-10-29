@@ -6,10 +6,16 @@ var AppAPI = require('../utils/AppAPI.js');
 
 var CHANGE_EVENT = 'change';
 
-var _items = [];
+var _contacts = [];
 
 var AppStore = assign({}, EventEmitter.prototype, {
-	emitChange: function(){
+	getContacts: function() {
+		return _contacts;
+	},
+	saveContact: function(contact) {
+		_contacts.push(contact);
+	},
+	emitChange: function() {
 		this.emit(CHANGE_EVENT);
 	},
 	addChangeListener: function(callback) {
@@ -23,8 +29,23 @@ var AppStore = assign({}, EventEmitter.prototype, {
 AppDispatcher.register(function(payload) {
 	var action = payload.action;
 
-	switch(action.actionType){
+	switch(action.actionType) {
+		case AppConstants.SAVE_CONTACT:
+			console.log('Saving Contact...');
 
+			// Store Save
+			AppStore.saveContact(action.contact);
+
+			//Emit Change
+			AppStore.emit(CHANGE_EVENT);
+			break;
+
+		case AppConstants.RECEIVE_CONTACTS:
+			console.log('Receiving Contacts...');
+
+			//Emit Change
+			AppStore.emit(CHANGE_EVENT);
+			break;
 	}
 
 	return true;
