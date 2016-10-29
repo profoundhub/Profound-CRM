@@ -6,7 +6,7 @@ var AddForm = require('./AddForm.js');
 
 function getAppState(){
 	return {
-
+		contacts: AppStore.getContacts()
 	}
 }
 
