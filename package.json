@@ -15,12 +15,13 @@
     "object-assign": "*",
     "reactify": "*",
     "vinyl-source-stream": "*",
-    "yarn": "^0.16.1"
+    "yarn": "*"
   },
   "dependencies": {
-    "envify": "^3.4.1",
-    "firebase": "^3.5.2",
-    "react": "^15.3.2",
-    "react-dom": "^15.3.2"
+    "envify": "*",
+    "firebase": "*",
+    "react": "*",
+    "react-dom": "*",
+    "yarn": "*"
   }
 }
