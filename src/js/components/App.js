@@ -28,7 +28,7 @@ var App = React.createClass({
 		return(
 			<div>				 
 				<AddForm />
-				<ContactList contacts={this.state.contacts} />
+				<ContactList contacts={ this.state.contacts } />
 			</div>
 		);
 	},
