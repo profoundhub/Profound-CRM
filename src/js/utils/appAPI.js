@@ -9,6 +9,15 @@ var config = {
 
 firebase.initializeApp(config);
 
+	// Get Elements
+    const txtEmail = document.getElementById("txtEmail");
+    const txtPassword = document.getElementById("txtPassword");
+    const btnLogin = document.getElementById("btnLogin");
+    const btnSignUp = document.getElementById("btnSignUp");
+    const btnLogOut = document.getElementById("btnLogOut");
+
+
+
 module.exports = {
 	saveContact: function(contact) {
 		this.firebaseRef = firebase.database().ref();
