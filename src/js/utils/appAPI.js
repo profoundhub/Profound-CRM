@@ -10,7 +10,7 @@ module.exports = {
 },
 
 	getContacts: function(){
-		this.firebaseRef = new Firebase('https://contactlist2.firebaseio.com/contacts');
+		this.firebaseRef = new Firebase('https://contactlist2.firebaseio.com/profoundcrm');
 		this.firebaseRef.once("value", function(snapshot){
 			var contacts = [];
 			snapshot.forEach(function(childSnapshot){
