@@ -11,6 +11,28 @@ function getAppState(){
 	}
 }
 
+// Add Log-in Event
+    btnLogin.addEventListener('click', e => {
+		// Get Email & Password
+        const email = txtEmail.value;
+        const pass  = txtPassword.value;
+        const auth  = firebase.auth();
+		// Sign-in
+        const promise = auth.signInWithEmailAndPassword(email,pass);
+        promise.catch(e => console.log(e.message));
+	});
+
+// Add Sign-in Event
+    btnLogin.addEventListener('click', e => {
+		// Get Email & Password
+        const email = txtEmail.value;
+        const pass  = txtPassword.value;
+        const auth  = firebase.auth();
+		// Sign-in
+        const promise = auth.signInWithEmailAndPassword(email,pass);
+        promise.catch(e => console.log(e.message));
+	});	
+
 var App = React.createClass({
 	getInitialState: function() {
 		return getAppState();

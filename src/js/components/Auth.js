@@ -30,22 +30,7 @@ var Auth = React.createClass({
                                 </p>                                
                             </div>
 
-                            <div className="container">
-
-                                <form className="form-signin">
-                                    <h2 className="form-signin-heading">Please sign in</h2>
-                                    <input type="inputEmail" id="txtEmail" className="form-control" placeholder="Email address" required autofocus />
-                                    <input type="inputPassword" id="txtPassword" className="form-control" placeholder="Password" required />
-                                    <div className="checkbox">
-                                        <label>
-                                            <input type="checkbox" value="remember-me" /> Remember me
-                                        </label>
-                                    </div>
-                                    <button id="btnLogIn" className="btn btn-lg btn-primary btn-block" type="submit">Log in</button>
-                                    <button id="btnSignUp" className="btn btn-lg btn-primary btn-block" type="submit">Sign Up</button>
-                                    <button id="btnLogOut" className="btn btn-lg btn-primary btn-block hide" type="submit">Log Out</button>
-                                </form>
-                            </div>
+                           
 
                         </div>
 

@@ -16,8 +16,6 @@ firebase.initializeApp(config);
     const btnSignUp = document.getElementById("btnSignUp");
     const btnLogOut = document.getElementById("btnLogOut");
 
-
-
 module.exports = {
 	saveContact: function(contact) {
 		this.firebaseRef = firebase.database().ref();
