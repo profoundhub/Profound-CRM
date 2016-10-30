@@ -23,14 +23,18 @@ function getAppState(){
 	});
 
 // Add Sign-in Event
-    btnLogin.addEventListener('click', e => {
+    btnSignup.addEventListener('click', e => {
 		// Get Email & Password
+		// TODO: Check for real Emails
+
         const email = txtEmail.value;
         const pass  = txtPassword.value;
         const auth  = firebase.auth();
 		// Sign-in
-        const promise = auth.signInWithEmailAndPassword(email,pass);
-        promise.catch(e => console.log(e.message));
+        const promise = auth.createUserWithEmailAndPassword(email,pass);
+        promise
+			.then(user => console.log(user));
+			.catch(e => console.log(e.message));
 	});	
 
 var App = React.createClass({
