@@ -1,6 +1,8 @@
 /node_modules
 node_modules
-dist
+
+# dist for Hero
+# dist
 
 # Windows image file caches
   Thumbs.db
