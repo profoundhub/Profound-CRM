@@ -25,7 +25,7 @@ function getAppState(){
 // Add Sign-in Event
     btnSignup.addEventListener('click', e => {
 		// Get Email & Password
-		// TODO: Check for real Emails
+		// TODO: Check for Real Emails
 
         const email = txtEmail.value;
         const pass  = txtPassword.value;
@@ -37,9 +37,14 @@ function getAppState(){
 			.catch(e => console.log(e.message));
 	});	
 
-	// Add Real-Time Autho.
-
-
+// Add Real-Time Autho.
+	firebase.auth().onAuthStateChanged(firebaseUser => {
+		if (firebaseUser) {
+			console.log(firebaseUser);
+		} else {
+			console.log('Not Logged In!');
+		}
+	});
 
 var App = React.createClass({
 	getInitialState: function() {
