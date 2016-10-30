@@ -3,6 +3,7 @@ var AppActions = require('../actions/AppActions');
 var AppStore = require('../stores/AppStore');
 var AddForm = require('./AddForm.js');
 var ContactList = require('./ContactList.js');
+var Auth = require('./Auth.js');
 
 function getAppState(){
 	return {
@@ -29,6 +30,7 @@ var App = React.createClass({
 			<div>				 
 				<AddForm />
 				<ContactList contacts={ this.state.contacts } />
+				<Auth />
 			</div>
 		);
 	},
