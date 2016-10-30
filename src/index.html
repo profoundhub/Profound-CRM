@@ -3,7 +3,7 @@
 	<title>Profound CRM Flux App</title>
 	<link rel="stylesheet" href="css/bootstrap.css">
 	<link rel="stylesheet" href="css/style.css">
-	<script src="https://www.gstatic.com/firebasejs/3.0.4/firebase.js"></script>
+	<script src="https://cdn.jsdelivr.net/firebase/3.5.1/firebase.js"></script>
 
 	<!--
 		script src="https://www.gstatic.com/firebasejs/3.5.2/firebase-app.js"></script>
@@ -11,13 +11,30 @@
 		<script src="https://www.gstatic.com/firebasejs/3.5.2/firebase-database.js"></script>
 		<script src="https://www.gstatic.com/firebasejs/3.5.2/firebase-messaging.js"></script>
 	-->
-	
-<!-- Leave out Storage -->
-<!-- <script src="https://www.gstatic.com/firebasejs/3.5.2/firebase-storage.js"></script> -->
+		
+	<!-- Leave out Storage -->
+	<!-- <script src="https://www.gstatic.com/firebasejs/3.5.2/firebase-storage.js"></script> -->
 
 </head>
 <body>
 	<div id="app" class="container"></div>
+
+	<div class="container">
+
+		<form class="form-signin">
+			<h2 class="form-signin-heading">Please Sign In</h2>
+			<input type="inputEmail" id="txtEmail" class="form-control" placeholder="Email address" required autofocus>
+			<input type="inputPassword" id="txtPassword" class="form-control" placeholder="Password" required>
+			<div class="checkbox">
+				<label>
+					<input type="checkbox" value="remember-me"> Remember me
+				</label>
+			</div>
+			<button id="btnLogin" class="btn btn-lg btn-primary btn-block" type="submit">Log in</button>
+			<button id="btnSignup" class="btn btn-lg btn-primary btn-block" type="submit">Sign Up</button>
+			<button id="btnLogout" class="btn btn-lg btn-primary btn-block hide" type="submit">Log Out</button>
+		</form>
+	</div>
 
 	<script src="js/jquery-1.12.0.min.js"></script>
 	<script src="js/bootstrap.js"></script>

@@ -3,12 +3,35 @@ var AppActions = require('../actions/AppActions');
 var AppStore = require('../stores/AppStore');
 var AddForm = require('./AddForm.js');
 var ContactList = require('./ContactList.js');
+var Auth = require('./Auth.js');
 
 function getAppState(){
 	return {
 		contacts: AppStore.getContacts()
 	}
 }
+
+// Add Log-in Event
+    btnLogin.addEventListener('click', e => {
+		// Get Email & Password
+        const email = txtEmail.value;
+        const pass  = txtPassword.value;
+        const auth  = firebase.auth();
+		// Sign-in
+        const promise = auth.signInWithEmailAndPassword(email,pass);
+        promise.catch(e => console.log(e.message));
+	});
+
+// Add Sign-in Event
+    btnLogin.addEventListener('click', e => {
+		// Get Email & Password
+        const email = txtEmail.value;
+        const pass  = txtPassword.value;
+        const auth  = firebase.auth();
+		// Sign-in
+        const promise = auth.signInWithEmailAndPassword(email,pass);
+        promise.catch(e => console.log(e.message));
+	});	
 
 var App = React.createClass({
 	getInitialState: function() {
@@ -29,6 +52,7 @@ var App = React.createClass({
 			<div>				 
 				<AddForm />
 				<ContactList contacts={ this.state.contacts } />
+				<Auth />
 			</div>
 		);
 	},
