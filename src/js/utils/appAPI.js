@@ -11,7 +11,6 @@ var config = {
 };
 firebase.initializeApp(config);
 
-
 // Get Elements
     const txtEmail 		= document.getElementById("txtEmail");
     const txtPassword 	= document.getElementById("txtPassword");
@@ -33,7 +32,7 @@ firebase.initializeApp(config);
 // Add Sign-in Event
     btnSignUp.addEventListener('click', e => {
 		// Get Email & Password
-		// TODO: Check for Real Emails
+		// TODO: Check for Real Emails?
 
         const email 	= txtEmail.value;
         const pass  	= txtPassword.value;
@@ -60,7 +59,6 @@ firebase.initializeApp(config);
 		}
 		console.log('firebaseUser: ', firebaseUser); // firebase.User , email
 	});
-
 
 module.exports = {
 	saveContact: function(contact) {
