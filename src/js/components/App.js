@@ -33,9 +33,13 @@ function getAppState(){
 		// Sign-in
         const promise = auth.createUserWithEmailAndPassword(email,pass);
         promise
-			.then(user => console.log(user));
+			.then(user => console.log(user))
 			.catch(e => console.log(e.message));
 	});	
+
+	// Add Real-Time Autho.
+
+
 
 var App = React.createClass({
 	getInitialState: function() {
