@@ -19,7 +19,7 @@
   },
   "dependencies": {
     "envify": "*",
-    "firebase": "*",
+    "firebase": "^3.5.2",
     "react": "*",
     "react-dom": "*",
     "yarn": "*"
