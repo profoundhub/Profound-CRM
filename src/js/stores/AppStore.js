@@ -15,6 +15,10 @@ var AppStore = assign({}, EventEmitter.prototype, {
 	saveContact: function(contact) {
 		_contacts.push(contact);
 	},
+	
+	setContacts: function(contacts){
+		_contacts = contacts;
+	},
 	emitChange: function() {
 		this.emit(CHANGE_EVENT);
 	},

@@ -11,7 +11,7 @@ var config = {
 
 firebase.initializeApp(config);
 
-var firebaseRef = firebase.database().ref();
+ // var firebaseRef = firebase.database().ref();
 
 module.exports = {
 	saveContact: function(contact) {
