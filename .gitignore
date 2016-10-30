@@ -25,6 +25,7 @@ $RECYCLE.BIN/
 # Operating System Files
 # =========================
 .privates
+privateFire
 
 # OSX
 # =========================

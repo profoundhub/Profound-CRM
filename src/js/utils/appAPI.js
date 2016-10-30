@@ -10,11 +10,22 @@ var config = {
     apiKey: "AIzaSyBnEzTxUQ7PzL27P77DYE-UX-kc8MFkNT4",
     authDomain: "profoundcrm.firebaseapp.com",
     databaseURL: "https://profoundcrm.firebaseio.com"
+    
 };
 
+/*
+databaseAuthVariableOverride: {
+    uid: "my-service-workers"
+  }
+
+*/
 firebase.initializeApp(config);
 
 var firebaseRef = firebase.database().ref();
+
+var uid = "my-service-workers";
+var customToken = firebase.auth().createCustomToken(uid);
+
 /*
 
 firebase.initializeApp({
