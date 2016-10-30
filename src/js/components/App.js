@@ -18,7 +18,7 @@ function getAppState(){
         const pass  = txtPassword.value;
         const auth  = firebase.auth();
 		// Sign-in
-        const promise = auth.signInWithEmailAndPassword(email,pass);
+        const promise = auth.signInWithEmailAndPassword(email, password);
         promise.catch(e => console.log(e.message));
 	});
 
@@ -31,19 +31,24 @@ function getAppState(){
         const pass  = txtPassword.value;
         const auth  = firebase.auth();
 		// Sign-in
-        const promise = auth.createUserWithEmailAndPassword(email,pass);
-        promise
-			.then(user => console.log(user))
-			.catch(e => console.log(e.message));
+        const promise = auth.createUserWithEmailAndPassword(email, password);
+        promise.catch(e => console.log(e.message));
 	});	
 
-// Add Real-Time Autho.
+// Add Real-Time Autho. Listener
 	firebase.auth().onAuthStateChanged(firebaseUser => {
+		// Handle Errors here.
+        	let errorCode = error.code;
+        	let errorMessage = error.message;
+        // [START_EXCLUDE]
+
 		if (firebaseUser) {
-			console.log(firebaseUser);
+			console.log(firebase.User);
 		} else {
+			alert(errorMessage);
 			console.log('Not Logged In!');
 		}
+		console.log(errorCode);
 	});
 
 var App = React.createClass({
