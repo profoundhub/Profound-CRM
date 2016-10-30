@@ -14,7 +14,7 @@ var config = {
 
 firebase.initializeApp(config);
 
-// var rootRef = firebase.database().ref();
+var firebaseRef = firebase.database().ref();
 /*
 
 firebase.initializeApp({
@@ -36,14 +36,14 @@ firebase.initializeApp(config);
 
 module.exports = {
 	saveContact: function(contact) {
-		this.firebaseRef = firebase.database().ref('https://profoundcrm.firebaseio.com/');
+		this.firebaseRef = firebase.database().ref();
 		this.firebaseRef.push({
 			contact: contact
 		});
 },
 
 	getContacts: function(){
-		this.firebaseRef = new Firebase('https://contactlist2.firebaseio.com/profoundcrm');
+		this.firebaseRef = firebase.database().ref();
 		this.firebaseRef.once("value", function(snapshot){
 			var contacts = [];
 			snapshot.forEach(function(childSnapshot){
