@@ -6,10 +6,22 @@ require("firebase/auth");
 require("firebase/database");
 */
 
+var config = {
+    apiKey: "AIzaSyBnEzTxUQ7PzL27P77DYE-UX-kc8MFkNT4",
+    authDomain: "profoundcrm.firebaseapp.com",
+    databaseURL: "https://profoundcrm.firebaseio.com"
+};
+
+firebase.initializeApp(config);
+
+// var rootRef = firebase.database().ref();
+/*
+
 firebase.initializeApp({
   serviceAccount: "path/to/serviceAccountCredentials.json",
   databaseURL: "https://profoundcrm.firebaseio.com"
 });
+*/
 
 /*
 var config = {
@@ -24,7 +36,7 @@ firebase.initializeApp(config);
 
 module.exports = {
 	saveContact: function(contact) {
-		this.firebaseRef = new Firebase('https://profoundcrm.firebaseio.com/profoundcrm');
+		this.firebaseRef = firebase.database().ref('https://profoundcrm.firebaseio.com/profoundcrm');
 		this.firebaseRef.push({
 			contact: contact
 		});
