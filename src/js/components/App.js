@@ -18,7 +18,7 @@ function getAppState(){
         const pass  = txtPassword.value;
         const auth  = firebase.auth();
 		// Sign-in
-        const promise = auth.signInWithEmailAndPassword(email,pass);
+        const promise = auth.signInWithEmailAndPassword(email, password);
         promise.catch(e => console.log(e.message));
 	});
 
@@ -31,7 +31,7 @@ function getAppState(){
         const pass  = txtPassword.value;
         const auth  = firebase.auth();
 		// Sign-in
-        const promise = auth.createUserWithEmailAndPassword(email,pass);
+        const promise = auth.createUserWithEmailAndPassword(email, password);
         promise
 			.then(user => console.log(user))
 			.catch(e => console.log(e.message));
@@ -40,7 +40,7 @@ function getAppState(){
 // Add Real-Time Autho.
 	firebase.auth().onAuthStateChanged(firebaseUser => {
 		if (firebaseUser) {
-			console.log(firebaseUser);
+			console.log(firebase.User);
 		} else {
 			console.log('Not Logged In!');
 		}
