@@ -32,18 +32,23 @@ function getAppState(){
         const auth  = firebase.auth();
 		// Sign-in
         const promise = auth.createUserWithEmailAndPassword(email, password);
-        promise
-			.then(user => console.log(user))
-			.catch(e => console.log(e.message));
+        promise.catch(e => console.log(e.message));
 	});	
 
-// Add Real-Time Autho.
+// Add Real-Time Autho. Listener
 	firebase.auth().onAuthStateChanged(firebaseUser => {
+		// Handle Errors here.
+        	let errorCode = error.code;
+        	let errorMessage = error.message;
+        // [START_EXCLUDE]
+
 		if (firebaseUser) {
 			console.log(firebase.User);
 		} else {
+			alert(errorMessage);
 			console.log('Not Logged In!');
 		}
+		console.log(errorCode);
 	});
 
 var App = React.createClass({
