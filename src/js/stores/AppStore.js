@@ -14,10 +14,13 @@ var AppStore = assign({}, EventEmitter.prototype, {
 	},
 	saveContact: function(contact) {
 		_contacts.push(contact);
-	},
-	
-	setContacts: function(contacts){
+	},	
+	setContacts: function(contacts) {
 		_contacts = contacts;
+	},
+	removeContact: function(contactId) {
+		var index = _contacts.findIndex(x => x.id === contactId);
+		_contacts.splice(index, 1);
 	},
 	emitChange: function() {
 		this.emit(CHANGE_EVENT);
@@ -35,7 +38,7 @@ AppDispatcher.register(function(payload) {
 
 	switch(action.actionType) {
 		case AppConstants.SAVE_CONTACT:
-			console.log('Saving Contact...');
+			console.log('Saving Contact ...');
 
 			// Store Save
 			AppStore.saveContact(action.contact);
@@ -43,19 +46,32 @@ AppDispatcher.register(function(payload) {
 			// Save to API
 			AppAPI.saveContact(action.contact);
 
-			//Emit Change
+			// Emit Changes
 			AppStore.emit(CHANGE_EVENT);
-			break;
+		break;
 
 		case AppConstants.RECEIVE_CONTACTS:
-			console.log('Receiving Contacts...');
+			console.log('Receiving Contacts ...');
 
 			// Store Save
 			AppStore.setContacts(action.contacts);
 
-			//Emit Change
+			// Emit Changes
 			AppStore.emit(CHANGE_EVENT);
-			break;
+		break;
+
+		case AppConstants.REMOVE_CONTACT:
+			console.log('Removing Contact ...');
+
+			// Store Remove
+			AppStore.removeContact(action.contactId);
+
+			// API Remove
+			AppAPI.removeContact(action.contactId);
+
+			// Emit Changes
+			AppStore.emit(CHANGE_EVENT);
+		break;	
 	}
 
 	return true;

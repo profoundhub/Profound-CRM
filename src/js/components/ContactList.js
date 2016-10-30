@@ -11,9 +11,9 @@ var ContactList = React.createClass({
 				<table className="table table-striped">
 					<thead>
 						<tr>
-							<th>Name: </th>
-							<th>Phone: </th>
-							<th>Email: </th>
+							<th>Name</th>
+							<th>Phone</th>
+							<th>Email</th>
 							<th></th>
 						</tr>
 					</thead>
