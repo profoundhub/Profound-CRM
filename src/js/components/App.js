@@ -11,46 +11,6 @@ function getAppState(){
 	}
 }
 
-// Add Log-in Event
-    btnLogin.addEventListener('click', e => {
-		// Get Email & Password
-        const email = txtEmail.value;
-        const pass  = txtPassword.value;
-        const auth  = firebase.auth();
-		// Sign-in
-        const promise = auth.signInWithEmailAndPassword(email, password);
-        promise.catch(e => console.log(e.message));
-	});
-
-// Add Sign-in Event
-    btnSignup.addEventListener('click', e => {
-		// Get Email & Password
-		// TODO: Check for Real Emails
-
-        const email = txtEmail.value;
-        const pass  = txtPassword.value;
-        const auth  = firebase.auth();
-		// Sign-in
-        const promise = auth.createUserWithEmailAndPassword(email, password);
-        promise.catch(e => console.log(e.message));
-	});	
-
-// Add Real-Time Autho. Listener
-	firebase.auth().onAuthStateChanged(firebaseUser => {
-		// Handle Errors here.
-        	let errorCode = error.code;
-        	let errorMessage = error.message;
-        // [START_EXCLUDE]
-
-		if (firebaseUser) {
-			console.log(firebase.User);
-		} else {
-			alert(errorMessage);
-			console.log('Not Logged In!');
-		}
-		console.log(errorCode);
-	});
-
 var App = React.createClass({
 	getInitialState: function() {
 		return getAppState();
