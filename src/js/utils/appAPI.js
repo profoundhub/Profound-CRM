@@ -8,10 +8,18 @@ require("firebase/database");
 // Leave out Storage
 //require("firebase/storage");
 
-var config = {
-  // ...
-};
-firebase.initializeApp(config);
+<script>
+	// Initialize Firebase
+	var config = {
+		apiKey: "AIzaSyBnEzTxUQ7PzL27P77DYE-UX-kc8MFkNT4",
+		authDomain: "profoundcrm.firebaseapp.com",
+		databaseURL: "https://profoundcrm.firebaseio.com",
+		storageBucket: "profoundcrm.appspot.com",
+		messagingSenderId: "235081852006"
+	};
+	firebase.initializeApp(config);
+</script>
+    
 
 module.exports = {
 	saveContact: function(contact) {
