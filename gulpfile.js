@@ -23,3 +23,11 @@ gulp.task('copy', function() {
 gulp.task('default', ['browserify', 'copy'], function() {
 	return gulp.watch('src/**/*.*', ['browserify', 'copy']);
 });
+
+ gulp.src(src)
+        // ...
+        .pipe(uglify({compress: {}}))
+        .pipe(gulp.dest('./dist'))
+        .on('error', function (error) {
+            console.error('' + error);
+        });
