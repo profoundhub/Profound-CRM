@@ -36,7 +36,7 @@ firebase.initializeApp(config);
 
 module.exports = {
 	saveContact: function(contact) {
-		this.firebaseRef = firebase.database().ref('https://profoundcrm.firebaseio.com/profoundcrm');
+		this.firebaseRef = firebase.database().ref('https://profoundcrm.firebaseio.com/');
 		this.firebaseRef.push({
 			contact: contact
 		});
