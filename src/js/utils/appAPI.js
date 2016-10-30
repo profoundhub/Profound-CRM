@@ -1,50 +1,13 @@
 let Firebase = require('firebase');
 let AppActions = require('../actions/AppActions');
-let myServiceAccount = require('../../../privateFire/serviceAccountCredentials4Daniel.json');
-
-/*
-require("firebase/auth");
-require("firebase/database");
-*/
 
 var config = {
     apiKey: "AIzaSyBnEzTxUQ7PzL27P77DYE-UX-kc8MFkNT4",
     authDomain: "profoundcrm.firebaseapp.com",
-    databaseURL: "https://profoundcrm.firebaseio.com",
-    serviceAccount: "./privateFire/serviceAccountCredentials4Daniel.json"  // myServiceAccount        
+    databaseURL: "https://profoundcrm.firebaseio.com",            
 };
 
-/*
-databaseAuthVariableOverride: {
-    uid: "my-service-workers"
-  }
-
-*/
 firebase.initializeApp(config);
-
-var firebaseRef = firebase.database().ref();
-/*
-var uid = "my-service-workers";
-var customToken = firebase.auth().createCustomToken(uid);
-*/
-/*
-
-firebase.initializeApp({
-  serviceAccount: "path/to/serviceAccountCredentials.json",
-  databaseURL: "https://profoundcrm.firebaseio.com"
-});
-*/
-
-/*
-var config = {
-    apiKey: "AIzaSyBnEzTxUQ7PzL27P77DYE-UX-kc8MFkNT4",
-    authDomain: "profoundcrm.firebaseapp.com",
-    databaseURL: "https://profoundcrm.firebaseio.com",
-    storageBucket: "profoundcrm.appspot.com",
-    messagingSenderId: "235081852006"
-};
-firebase.initializeApp(config);
-*/
 
 module.exports = {
 	saveContact: function(contact) {
@@ -52,15 +15,14 @@ module.exports = {
 		this.firebaseRef.push({
 			contact: contact
 		});
-},
-
-	getContacts: function(){
+    },
+	getContacts: function() {
 		this.firebaseRef = firebase.database().ref();
-		this.firebaseRef.once("value", function(snapshot){
-			var contacts = [];
-			snapshot.forEach(function(childSnapshot){
+		this.firebaseRef.once("value", function(snapshot) {
+			var contacts = []; // array
+			snapshot.forEach(function(childSnapshot) {
 				var contact = {
-					id: childSnapshot.key(),
+					id: childSnapshot.key,
 					name: childSnapshot.val().contact.name,
 					phone: childSnapshot.val().contact.phone,
 					email: childSnapshot.val().contact.email

@@ -26,6 +26,7 @@ $RECYCLE.BIN/
 # =========================
 .privates
 privateFire
+private-files
 
 # OSX
 # =========================

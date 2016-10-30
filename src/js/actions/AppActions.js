@@ -3,7 +3,7 @@ var AppConstants = require('../constants/AppConstants');
 
 var AppActions = {
 
-	saveContact: function(contact){
+	saveContact: function(contact) {
 		console.log(contact);
 		AppDispatcher.handleViewAction({
 			actionType: AppConstants.SAVE_CONTACT,
@@ -11,10 +11,11 @@ var AppActions = {
 		});
 	},
 
-	receiveItems: function(items){
+	receiveContacts: function(contacts){
+		console.log(contacts);
 		AppDispatcher.handleViewAction({
-			actionType: AppConstants.RECEIVE_ITEMS,
-			items: items
+			actionType: AppConstants.RECEIVE_CONTACTS,
+			contacts: contacts
 		});
 	}
 }
