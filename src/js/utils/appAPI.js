@@ -4,19 +4,16 @@ let AppActions = require('../actions/AppActions');
 require("firebase/auth");
 require("firebase/database");
 
-
-    // Leave out Storage
-    //require("firebase/storage");
-
-	// Initialize Firebase
-	var config = {
-		apiKey: "AIzaSyBnEzTxUQ7PzL27P77DYE-UX-kc8MFkNT4",
-		authDomain: "profoundcrm.firebaseapp.com",
-		databaseURL: "https://profoundcrm.firebaseio.com",
-		storageBucket: "profoundcrm.appspot.com",
-		messagingSenderId: "235081852006"
-	};
-	firebase.initializeApp(config);
+/*
+var config = {
+    apiKey: "AIzaSyBnEzTxUQ7PzL27P77DYE-UX-kc8MFkNT4",
+    authDomain: "profoundcrm.firebaseapp.com",
+    databaseURL: "https://profoundcrm.firebaseio.com",
+    storageBucket: "profoundcrm.appspot.com",
+    messagingSenderId: "235081852006"
+};
+firebase.initializeApp(config);
+*/
     
 module.exports = {
 	saveContact: function(contact) {
