@@ -21,13 +21,13 @@ module.exports = {
 		});
 },
 
-	getContacts: function(){
+	getContacts: function() {
 		this.firebaseRef = firebase.database().ref();
 		this.firebaseRef.once("value", function(snapshot) {
 			var contacts = []; // array
 			snapshot.forEach(function(childSnapshot) {
 				var contact = {
-					id: childSnapshot.key(),
+					id: childSnapshot.key,
 					name: childSnapshot.val().contact.name,
 					phone: childSnapshot.val().contact.phone,
 					email: childSnapshot.val().contact.email
